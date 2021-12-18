@@ -32,9 +32,9 @@ jobs:
                   dotnet: [4.7.2]
               - type: append
                 matrix:
-                  os: [osx]
+                  os: [macos-latest]
                   component: [backend,ui]
-                  dotnet: [5.0.102,4.7.2]
+                  dotnet: [4.7.2,5.0.102]
       - name: Verify output
         run: |
           echo ${{ steps.test.outputs.matrix }}

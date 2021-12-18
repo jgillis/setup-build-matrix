@@ -30,7 +30,7 @@ jobs:
                   os: [windows-latest]
                   component: [ui]
                   dotnet: [4.7.2]
-              - type: add
+              - type: append
                 matrix:
                   os: [osx]
                   component: [backend,ui]

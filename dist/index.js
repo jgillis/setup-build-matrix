@@ -64,7 +64,7 @@ try {
 
     switch (op.type) {
       case "append":
-        matrix = matrix.append(matrix, op_matrix);
+        matrix = matrix.append(op_matrix);
         break;
       case "merge":
         matrix = ordered_merge(matrix, op_matrix, op.match, "outer");

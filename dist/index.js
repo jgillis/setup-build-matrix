@@ -63,7 +63,7 @@ try {
     core.debug(`Matrix:\n${op_matrix.toString()}`);
 
     switch (op.type) {
-      case "merge":
+      case "append":
         matrix = matrix.append(matrix, op_matrix);
         break;
       case "merge":

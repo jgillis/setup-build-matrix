@@ -19,6 +19,12 @@ jobs:
               component: [backend, ui]
               dotnet: [3.1.405, 5.0.102]
             operations:
+              - type: append
+                matrix:
+                  os: [macos-latest]
+                  component: [backend,ui]
+                  dotnet: [4.7.2,5.0.102]
+                  node: [14.15.4]
               - type: merge
                 match: [component]
                 matrix:
@@ -30,11 +36,6 @@ jobs:
                   os: [windows-latest]
                   component: [ui]
                   dotnet: [4.7.2]
-              - type: append
-                matrix:
-                  os: [macos-latest]
-                  component: [backend,ui]
-                  dotnet: [4.7.2,5.0.102]
       - name: Verify output
         run: |
           echo ${{ steps.test.outputs.matrix }}

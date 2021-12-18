@@ -15,26 +15,17 @@ jobs:
         with:
           config: |
             matrix:
-              os: [ubuntu-latest, windows-latest]
-              component: [backend, ui]
-              dotnet: [3.1.405, 5.0.102]
+              arch: [manylinux1-x64,manylinux1-x86]
+              py2: [27,35,36,37,38,39]
             operations:
               - type: append
                 matrix:
-                  os: [macos-latest]
-                  component: [backend,ui]
-                  dotnet: [4.7.2,5.0.102]
-              - type: merge
-                match: [component]
+                  arch: [manylinux2014-x64,manylinux2014-x86]
+                  py2: [310]
+              - type: append
                 matrix:
-                  component: [ui]
-                  node: [14.15.4, 15.6.0]
-              - type: add
-                match: [os, component]
-                matrix:
-                  os: [windows-latest]
-                  component: [ui]
-                  dotnet: [4.7.2]
+                  arch: [manylinux2014-aarch64]
+                  py2: [35,36,37,38,39]
       - name: Verify output
         run: |
           echo ${{ steps.test.outputs.matrix }}

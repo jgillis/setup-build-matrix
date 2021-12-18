@@ -24,7 +24,6 @@ jobs:
                   os: [macos-latest]
                   component: [backend,ui]
                   dotnet: [4.7.2,5.0.102]
-                  node: [14.15.4]
               - type: merge
                 match: [component]
                 matrix:

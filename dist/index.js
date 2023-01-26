@@ -61,7 +61,7 @@ try {
     core.debug(`Operation: ${op.type}`);
     core.debug(`Match: ${op.match}`);
     core.debug(`Matrix:\n${op_matrix.toString()}`);
-    core.debug(`If:\n${op.if.toString()}`);
+    core.debug(`If:\n${op.if}`);
     if (op.if && !eval(op.if)) continue;
 
     switch (op.type) {

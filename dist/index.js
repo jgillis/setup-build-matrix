@@ -61,9 +61,9 @@ try {
     core.debug(`Operation: ${op.type}`);
     core.debug(`Match: ${op.match}`);
     core.debug(`Matrix:\n${op_matrix.toString()}`);
-    core.debug(`If:\n${op.if} ${!op.if}`);
-    // If undefined or false, skip this operation
-    if (!op.if) continue;
+    core.debug(`If: ${op.if}`);
+    // If undefined or true, do not break out of the loop
+    if (op.if !== undefined && !op.if) continue;
 
     switch (op.type) {
       case "append":

@@ -30,7 +30,9 @@
     "babel-runtime": "^6.26.0",
     "fast-cartesian": "^5.1.0",
     "js-yaml": "^4.0.0",
-    "pandas-js": "^0.2.4"
+    "pandas-js": "^0.2.4",
+    "worker-threads": "^1.0.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@vercel/ncc": "^0.27.0",
